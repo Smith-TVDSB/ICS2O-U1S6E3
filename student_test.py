@@ -60,7 +60,7 @@ def test_tau():
 
     assert '6.28319' == output[2], "Output the number only"
 
- def test_tau_two():
+def test_tau_two():
     input_values=['6.283185','2']
     output=[]
 
@@ -79,7 +79,7 @@ def test_tau():
 
     assert '6.28' == output[2], "Output the number only"
     
- def test_tau_whole():
+def test_tau_whole():
     input_values=['6.283185','0']
     output=[]
 
@@ -98,7 +98,7 @@ def test_tau():
 
     assert '6' == output[2] or '6.0' == output[2], "Output the number only"
     
- def test_nines():
+def test_nines():
     input_values=['9.9999','2']
     output=[]
 
@@ -117,7 +117,7 @@ def test_tau():
 
     assert '10' == output[2] or '10.0' == output[2], "Output the number only"
     
- def test_nine_off():
+def test_nine_off():
     input_values=['9.991','2']
     output=[]
 
