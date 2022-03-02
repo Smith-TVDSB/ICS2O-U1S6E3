@@ -20,7 +20,7 @@ def test_default():
 
     student.main()
 
-    assert '3.142' == output[2],"Output the number only"
+    assert '3.142' ==  str(output[2]),"Output the number only"
     
 def test_more_decimals():
     input_values=['3.14159268','4']
@@ -39,26 +39,8 @@ def test_more_decimals():
 
     student.main()
 
-    assert '3.1416' == output[2], "Output the number only"
+    assert '3.1416' ==  str(output[2]), "Output the number only"
     
-def test_tau():
-    input_values=['6.283185','5']
-    output=[]
-
-    def mock_input(s=None):
-        if s is not None:
-            output.append(s)
-            return input_values.pop(0)
-        else:
-            output.append("")
-            return input_values.pop(0)
-    
-    student.input = mock_input
-    student.print = lambda s : output.append(s)
-
-    student.main()
-
-    assert '6.28319' == output[2], "Output the number only"
 
 def test_tau_two():
     input_values=['6.283185','2']
@@ -77,7 +59,7 @@ def test_tau_two():
 
     student.main()
 
-    assert '6.28' == output[2], "Output the number only"
+    assert '6.28' ==  str(output[2]), "Output the number only"
     
 def test_tau_whole():
     input_values=['6.283185','0']
@@ -96,7 +78,7 @@ def test_tau_whole():
 
     student.main()
 
-    assert '6' == output[2] or '6.0' == output[2], "Output the number only"
+    assert '6' ==  str(output[2]) or '6.0' ==  str(output[2]), "Output the number only"
     
 def test_nines():
     input_values=['9.9999','2']
@@ -115,7 +97,7 @@ def test_nines():
 
     student.main()
 
-    assert '10' == output[2] or '10.0' == output[2], "Output the number only"
+    assert '10' ==  str(output[2]) or '10.0' ==  str(output[2]) or '10.00' == str(output[2]), "Output the number only"
     
 def test_nine_off():
     input_values=['9.991','2']
@@ -134,4 +116,4 @@ def test_nine_off():
 
     student.main()
 
-    assert '9.99' == output[2] or '9.99' == output[2], "Output the number only"
+    assert '9.99' == str(output[2]) or '9.99' == str(output[2]), "Output the number only"
